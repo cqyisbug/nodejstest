@@ -12,6 +12,7 @@ var superStar = function(name,color){
 var o_call = {};
 var o_apply = {};
 
+//注意下面的参数
 superStar.apply(o_apply,["apply_name","apply_color"]);
 
 superStar.call(o_call,"call_name","call_color");
