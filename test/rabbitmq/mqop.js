@@ -80,6 +80,23 @@ exports = module.exports = {
                 que.on("error", reject);
             });
         }
+    },
+    //获取exchange，如果key为空，则返回false
+    getExchange: function (key) {
+        if (!key) {
+            console.warn('key is null,plz check it out!');
+            return false;
+        } else {
+            return exchanges.get(key);
+        }
+    },
+    //获取queue，如果key为空，则返回false
+    getQueue: function (key) {
+        if (!key) {
+            console.warn('key is null,plz check it out!');
+            return false;
+        } else {
+            return queues.get(key);
+        }
     }
-
 };

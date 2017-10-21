@@ -1,4 +1,4 @@
-// 测试promise的成功返回，只会返回第一个参数，world！会显示为undefined
+// 测试promise的成功返回，只会返回第一个参数，会显示为undefined
 var p = new Promise((a, b) => {
     //setTimeout(a, 200, 'hello', 'world');
     a(1, 2);
