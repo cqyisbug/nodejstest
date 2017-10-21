@@ -3,35 +3,35 @@
  */
 
 
-if(0){
+if (0) {
     console.log('test 0')//不输出
 }
 
-if(1){
+if (1) {
     console.log('test 1')//输出
 }
 
-if('0'){
+if ('0') {
     console.log('test "0"')//输出
 }
 
-if('1'){
+if ('1') {
     console.log('test "1"')//输出
 }
 
-if({}){
+if ({}) {
     console.log('test {}')//输出
 }
 
-if([]){
+if ([]) {
     console.log('test []')//输出
 }
 
-if(undefined){
+if (undefined) {
     console.log('test undefined')//不输出
 }
 
-if(null){
+if (null) {
     console.log('test null')//不输出
 }
 

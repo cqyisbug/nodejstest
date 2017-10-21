@@ -12,7 +12,7 @@ function load_order_test_1() {
 
 /*  function 这样写不能用  */
 
-var load_order_test_2 = function(){
+var load_order_test_2 = function () {
     console.log('这么写只能放在之前定义');
 }
 

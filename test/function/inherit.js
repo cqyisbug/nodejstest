@@ -24,11 +24,12 @@ Animal.prototype.run = function () {
 
 
 var Cat = function () {
-     Animal.apply(this, arguments);
+    Animal.apply(this, arguments);
 };
 
 (function () {
-    var f = function (){};
+    var f = function () {
+    };
     f.prototype = Animal.prototype;
     Cat.prototype = new f();
 })();

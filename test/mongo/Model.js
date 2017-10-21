@@ -13,13 +13,13 @@ var studentSchema = new Schema({
 });
 
 var Model = function (ip, port, db, col) {
-    if(arguments.length==2){
+    if (arguments.length == 2) {
         //ip 就是连接 port 就是collection
-        this.model = ip.model(port,studentSchema,port)
-    }else if(arguments.length==4){
-        var conn = require("mongoose").createConnection(ip,db,port);
-        this.model = conn.model(col,studentSchema,col);
-    }else{
+        this.model = ip.model(port, studentSchema, port)
+    } else if (arguments.length == 4) {
+        var conn = require("mongoose").createConnection(ip, db, port);
+        this.model = conn.model(col, studentSchema, col);
+    } else {
         console.log("wrong init construct args,plz check it out");
         return false;
     }
@@ -30,9 +30,9 @@ var Model = function (ip, port, db, col) {
  * @param cond
  * @param callbackf
  */
-Model.prototype.count = function (cond,callbackf) {
+Model.prototype.count = function (cond, callbackf) {
     // cond is an object
-    this.model.count(cond,callbackf);
+    this.model.count(cond, callbackf);
 };
 
 /**
@@ -40,8 +40,8 @@ Model.prototype.count = function (cond,callbackf) {
  * @param cond
  * @param callbackf
  */
-Model.prototype.find = function (cond,callbackf) {
-    this.model.find(cond,callbackf);
+Model.prototype.find = function (cond, callbackf) {
+    this.model.find(cond, callbackf);
 };
 
 /**
@@ -49,7 +49,7 @@ Model.prototype.find = function (cond,callbackf) {
  * @param obj
  * @param callbackf
  */
-Model.prototype.save= function(obj,callbackf){
+Model.prototype.save = function (obj, callbackf) {
     var doc = new this.model(obj);
     doc.save(callbackf);
 };
@@ -59,7 +59,7 @@ Model.prototype.save= function(obj,callbackf){
  * @param obj
  * @param callbackf
  */
-Model.prototype.update = function(obj,callbackf){
+Model.prototype.update = function (obj, callbackf) {
     this.model.update(obj).exec(callbackf);
 };
 
@@ -68,6 +68,6 @@ Model.prototype.update = function(obj,callbackf){
  * @param cond
  * @param callbackf
  */
-Model.prototype.delete = function(cond,callbackf){
+Model.prototype.delete = function (cond, callbackf) {
     this.model.remove(cond).exec(callbackf);
 }

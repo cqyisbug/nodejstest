@@ -4,18 +4,18 @@
  * @returns {*}
  */
 String.prototype.judge = function (str) {
-    try{
-        var x = eval("("+this+")");
-        if(str){
-            if(typeof x === str){
+    try {
+        var x = eval("(" + this + ")");
+        if (str) {
+            if (typeof x === str) {
                 return x;
-            }else{
+            } else {
                 return false;
             }
-        }else{
+        } else {
             return x;
         }
-    }catch (e){
+    } catch (e) {
         return false;
     }
 }

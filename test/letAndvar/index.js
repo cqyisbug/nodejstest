@@ -11,10 +11,10 @@ var b = [];
 /**
  * let 的作用域测试
  */
-for(let i = 0 ; i < 10 ;i++){
-   a[i] = function () {
-       console.log(i);
-   }
+for (let i = 0; i < 10; i++) {
+    a[i] = function () {
+        console.log(i);
+    }
 }
 
 a[6]();
@@ -23,7 +23,7 @@ a[6]();
 /**
  * var 的作用域测试
  */
-for(var i = 0 ; i < 10 ;i++){
+for (var i = 0; i < 10; i++) {
     b[i] = function () {
         console.log(i);
     }

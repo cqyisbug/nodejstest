@@ -22,7 +22,7 @@ var Cat = function () {
 
 };
 
-util.inherits(Cat,Animal);
+util.inherits(Cat, Animal);
 
 var cat = new Cat('mimi');
 cat.run();
