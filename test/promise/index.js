@@ -1,11 +1,14 @@
 // 测试promise的成功返回，只会返回第一个参数，world！会显示为undefined
 var p = new Promise((a, b) => {
-    setTimeout(a, 200, 'hello', 'world');
+    //setTimeout(a, 200, 'hello', 'world');
+    a(1, 2);
 });
 
-p.then((a, b) => {
-    console.log(a, b)
-});
+setTimeout(function () {
+    p.then((a, b) => {
+        console.log(a, b)
+    });
+}, 4000)
 
 
 // function timeout(ms) {
