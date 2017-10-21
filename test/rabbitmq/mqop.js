@@ -7,7 +7,7 @@ var defaultOptions = {
     password: 'cqy',
     authMechanism: 'AMQPLAIN',
     vhost: '/',
-    connectionTimeout: 10000,
+    connectionTimeout: 2000,
     ssl: {
         enabled: false
     }
@@ -21,9 +21,31 @@ var defaultImplOptions = {
     reconnectBackoffTime: 1000
 };
 
-module.exports = {
-    init: function (op, opImpl, readyCallback) {
-        return amqp.createConnection(op, opImpl, readyCallback);
-    }
-};
+var conn = null;//connection object
 
+exports = module.exports = {
+    //初始化
+    init: function (op, opImpl, readyCallback) {
+        conn = new amqp.createConnection(op, opImpl, readyCallback);
+        return conn;
+    },
+    //获取Conn
+    getConn: function () {
+        if (!conn) {
+            console.warn('conn is null,plz check it out!');
+        }
+        return conn;
+    },
+    createChannel: function () {
+        if (!conn) {
+            console.warn('conn is null,plz check it out!');
+            return false;
+        }
+
+        conn.on('ready',function () {
+
+        });
+
+    },
+
+};
