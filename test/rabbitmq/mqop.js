@@ -34,7 +34,9 @@ var queues = new Map();
 exports = module.exports = {
     //初始化 如果想用其他方法，请先调用init方法来初始化
     init: function (op, opImpl, readyCallback) {
-        op = _.extend(defaultOptions, op,);
+        op = op || {} ;
+        opImpl = opImpl || {};
+        op = _.extend(defaultOptions, op);
         opImpl = _.extend(defaultImplOptions, opImpl);
 
         return new Promise((resolve, reject) => {
