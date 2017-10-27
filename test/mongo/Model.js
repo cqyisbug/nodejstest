@@ -32,7 +32,7 @@ var Model = function (ip, port, db, col) {
  */
 Model.prototype.count = function (cond, callbackf) {
     // cond is an object
-    this.model.count(cond, callbackf);
+    this.model.count(cond).exec(callbackf);
 };
 
 /**
@@ -41,7 +41,7 @@ Model.prototype.count = function (cond, callbackf) {
  * @param callbackf
  */
 Model.prototype.find = function (cond, callbackf) {
-    this.model.find(cond, callbackf);
+    this.model.find(cond).exec(callbackf);
 };
 
 /**
@@ -71,3 +71,7 @@ Model.prototype.update = function (obj, callbackf) {
 Model.prototype.delete = function (cond, callbackf) {
     this.model.remove(cond).exec(callbackf);
 }
+
+exports = module.exports = {
+    Model:Model
+};
