@@ -12,8 +12,6 @@ var b = {
     2:"shi",
     3:"shui",
     length:4
-}
+};
 
-console.log(b)
-
-console.log(Array.prototype.slice.call(b))//[ <1 empty item>, 'ni', 'shi', 'shui' ]
+console.log(Array.prototype.slice.call(b));//[ <1 empty item>, 'ni', 'shi', 'shui' ]

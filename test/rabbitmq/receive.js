@@ -1,3 +1,5 @@
+"use strict";
+
 var mq = require('./mqop');
 var pro = mq.init();
 

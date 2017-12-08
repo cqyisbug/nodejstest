@@ -2,7 +2,7 @@
  * 其实这个文件没什么特色，只是整合了一个Promise
  * 整合的不好，多多包含
  */
-
+"use strict";
 var amqp = require("amqp");
 var _ = require('underscore');
 

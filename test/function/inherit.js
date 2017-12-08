@@ -9,8 +9,9 @@
  * @param name
  * @constructor
  */
-var Animal = function (name) {
-    var that = this;
+"use strict";
+let Animal = function (name) {
+    let that = this;
     that.name = name || 'animal';
     that.introduce = function () {
         console.log('hello ,my name is ' + name);
@@ -23,18 +24,17 @@ Animal.prototype.run = function () {
 };
 
 
-var Cat = function () {
+let Cat = function () {
     Animal.apply(this, arguments);
 };
 
 (function () {
-    var f = function () {
-    };
+    let f = function () {};
     f.prototype = Animal.prototype;
     Cat.prototype = new f();
 })();
 
-var cat = new Cat('mimi');
+let cat = new Cat('mimi');
 cat.introduce();
 cat.run();
 
