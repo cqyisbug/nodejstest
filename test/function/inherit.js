@@ -10,6 +10,7 @@
  * @constructor
  */
 "use strict";
+
 let Animal = function (name) {
     let that = this;
     that.name = name || 'animal';
@@ -36,3 +37,13 @@ let Cat = function () {
 let cat = new Cat('mimi');
 cat.introduce();
 cat.run();
+
+
+if(cat instanceof  Animal){
+    console.log('cat is Animal');//cat is Animal
+}
+
+if(cat instanceof Cat){
+    console.log('cat is Cat');//cat is Cat
+}
+

@@ -1,6 +1,9 @@
 /**
  * 测试一下nodeJs自带的继承，可以看出，只能继承prototype里面的属性，并不能继承构造函数里面的。
  */
+
+"use strict";
+
 var util = require("util");
 
 
@@ -19,7 +22,7 @@ Animal.prototype.run = function () {
 
 
 var Cat = function () {
-
+    Animal.apply(this,arguments);
 };
 
 util.inherits(Cat, Animal);
@@ -27,3 +30,12 @@ util.inherits(Cat, Animal);
 var cat = new Cat('mimi');
 cat.run();
 cat.introduce();
+
+
+if(cat instanceof  Animal){
+    console.log('cat is Animal');//cat is Animal
+}
+
+if(cat instanceof Cat){
+    console.log('cat is Cat');//cat is Cat
+}
