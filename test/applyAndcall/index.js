@@ -3,7 +3,7 @@
  * @param name
  * @param color
  */
-
+"use strict";
 var superStar = function (name, color) {
     this.name = name;
     this.color = color;
@@ -19,4 +19,4 @@ superStar.call(o_call, "call_name", "call_color");
 
 console.log("call result", o_call);
 
-console.log('\n\napply result', o_apply)
+console.log('\n\napply result', o_apply);

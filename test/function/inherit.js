@@ -23,7 +23,6 @@ Animal.prototype.run = function () {
     console.log(this.name + " is running...");
 };
 
-
 let Cat = function () {
     Animal.apply(this, arguments);
 };
@@ -37,5 +36,3 @@ let Cat = function () {
 let cat = new Cat('mimi');
 cat.introduce();
 cat.run();
-
-
